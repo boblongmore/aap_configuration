@@ -1,0 +1,15 @@
+---
+controller_projects:
+  - name: arista-veos-configuration
+    description: Base Configs for Arista devices used for Ansiblefest 2024
+    organization: Default
+    scm_branch: main
+    scm_clean: 'yes'
+    scm_delete_on_update: 'no'
+    scm_type: git
+    scm_update_on_launch: 'yes'
+    scm_update_cache_timeout: 0
+    scm_url: https://github.com/boblongmore/arista_configuration
+    scm_credential: ansiblefest_2024_github
+    allow_override: true
+    default_environment: arista_netbox_v1

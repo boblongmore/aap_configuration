@@ -1,0 +1,21 @@
+---
+
+- name: Playbook to configure AAP
+  hosts: automationcontroller
+  connection: local
+  # gather_facts: false
+  vars:
+    controller_validate_certs: false
+    controller_hostname: "{{ controller_name }}"
+    controller_oauthtoken: "{{ controller_token }}"
+    controller_username: "{{ controller_un }}"
+
+  pre_tasks:
+    - name: Include vars from controller_configs dir
+      ansible.builtin.include_vars:
+        dir: ./controller_configs
+        extensions: ["yml"]
+
+  roles:
+    - {role: infra.controller_configuration.projects, when: controller_projects is defined and controller_oauthtoken is defined}
+

@@ -1,0 +1,19 @@
+---
+- name: Create new Oauth Token
+  hosts: automationcontroller
+  connection: local
+
+  tasks:
+    - name: Create Token
+      awx.awx.token:
+        scope: "write"
+        state: "present"
+        controller_host: 10.236.72.94
+        validate_certs: false
+        controller_username: "{{ controller_username }}"
+        controller_password: "{{ controller_password }}"
+      register: result
+
+    - name: Print Oauth Token
+      ansible.builtin.debug:
+        msg: "{{ result }}"
