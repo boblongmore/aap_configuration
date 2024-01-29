@@ -19,6 +19,6 @@
   roles:
     - {role: infra.controller_configuration.projects, when: controller_projects is defined and controller_oauthtoken is defined}
     - {role: infra.controller_configuration.inventories, when: controller_inventories is defined and controller_oauthtoken is defined}
-    - {role: infra.controller_configuration.credential_types, when: credential_types is defined and controller_oauthtoken is defined}
-    - {role: infra.controller_configuration.credentials, when: credentials is defined and controller_oauthtoken is defined}
+    - {role: infra.controller_configuration.credential_types, when: controller_credential_types is defined and controller_oauthtoken is defined}
+    - {role: infra.controller_configuration.credentials, when: controller_credentials is defined and controller_oauthtoken is defined}
     - {role: infra.controller_configuration.inventory_sources, when: controller_inventory_sources is defined and controller_oauthtoken is defined}
