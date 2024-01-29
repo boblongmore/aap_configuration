@@ -1,0 +1,8 @@
+ansible
+pyyaml
+python-dotenv
+ntc_templates
+jinja2
+ansible-pylibssh
+ansible-lint
+pytz
