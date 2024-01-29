@@ -1,0 +1,12 @@
+controller_inventory_sources:
+  - name: arista-config-inv-source
+    source: scm
+    source_project: arista-veos-configuration
+    source_path: playbooks/plugins/inventory/netbox_inventory.yml
+    inventory: arista-config-inv-from-netbox
+    description: created by Ansible controller
+    execution_environment: arista_netbox_v1
+    credential: Netbox-api-credentials
+    overwrite: true
+    update_on_launch: true
+    update_cache_timeout: 0
