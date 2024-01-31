@@ -31,7 +31,7 @@ controller_templates:
     - Arista-netbox-vault
   extra_vars: 
     ansible_become: true
-- name: Arista-bgp-settings
+- name: linux-eveng-arista-config
   job_type: run
   inventory: ubuntu-servers-gns3-for-arista
   execution_environment: arista_netbox_v1
