@@ -10,3 +10,13 @@ controller_inventory_sources:
     overwrite: true
     update_on_launch: true
     update_cache_timeout: 0
+  - name: linux-config-inv-source
+    source: scm
+    source_project: arista-veos-configuration
+    source_path: playbooks/inventory/linux_inventory.yml
+    inventory: ubuntu-servers-gns3-for-arista
+    description: created by Ansible controller
+    execution_environment: arista_netbox_v1
+    overwrite: true
+    update_on_launch: true
+    update_cache_timeout: 0
