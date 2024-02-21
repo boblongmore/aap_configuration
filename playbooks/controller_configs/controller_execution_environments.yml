@@ -1,0 +1,5 @@
+---
+controller_execution_environments:
+  - name: k8s-ee
+    image: 192.168.2.28/k8s-ee
+    credential: automationhub
