@@ -1,41 +1,41 @@
 ---
 controller_templates:
-- name: Arista-Base-Settings
-  job_type: run
-  inventory: arista-config-inv-from-netbox
-  execution_environment: arista_netbox_v1
-  project: arista-veos-configuration
-  playbook: playbooks/arista_base_settings.yml
-  credentials:
-  - Arista-veos-credential
-  extra_vars: 
-    ansible_become: true
-- name: Arista-intf-settings
-  job_type: run
-  inventory: arista-config-inv-from-netbox
-  execution_environment: arista_netbox_v1
-  project: arista-veos-configuration
-  playbook: playbooks/arista_intf_config.yml
-  credentials:
-  - Arista-veos-credential
-  extra_vars: 
-    ansible_become: true
-- name: Arista-bgp-settings
-  job_type: run
-  inventory: arista-config-inv-from-netbox
-  execution_environment: arista_netbox_v1
-  project: arista-veos-configuration
-  playbook: playbooks/arista_bgp_config.yml
-  credentials:
-    - Arista-veos-credential
-    - Arista-netbox-vault
-  extra_vars: 
-    ansible_become: true
-- name: linux-eveng-arista-config
-  job_type: run
-  inventory: ubuntu-servers-gns3-for-arista
-  execution_environment: arista_netbox_v1
-  project: arista-veos-configuration
-  playbook: playbooks/linux_config.yml
-  credentials:
-    - linux-server-creds
+  - name: Arista-Base-Settings
+    job_type: run
+    inventory: arista-config-inv-from-netbox
+    execution_environment: arista_netbox_v1
+    project: arista-veos-configuration
+    playbook: playbooks/arista_base_settings.yml
+    credentials:
+      - Arista-veos-credential
+    extra_vars:
+      ansible_become: true
+  - name: Arista-intf-settings
+    job_type: run
+    inventory: arista-config-inv-from-netbox
+    execution_environment: arista_netbox_v1
+    project: arista-veos-configuration
+    playbook: playbooks/arista_intf_config.yml
+    credentials:
+      - Arista-veos-credential
+    extra_vars:
+      ansible_become: true
+  - name: Arista-bgp-settings
+    job_type: run
+    inventory: arista-config-inv-from-netbox
+    execution_environment: arista_netbox_v1
+    project: arista-veos-configuration
+    playbook: playbooks/arista_bgp_config.yml
+    credentials:
+      - Arista-veos-credential
+      - Arista-netbox-vault
+    extra_vars:
+      ansible_become: true
+  - name: linux-eveng-arista-config
+    job_type: run
+    inventory: ubuntu-servers-gns3-for-arista
+    execution_environment: arista_netbox_v1
+    project: arista-veos-configuration
+    playbook: playbooks/linux_config.yml
+    credentials:
+      - linux-server-creds
