@@ -3,6 +3,11 @@ controller_inventories:
   - name: arista-config-inv-from-netbox
     organization: Default
     description: created for use with arista configurations
+
   - name: ubuntu-servers-gns3-for-arista
     organization: Default
     description: created for use linux servers in eveng arista config
+
+  - name: wwt-bigpanda-eda-demo-inventory
+    organization: Application-Demo
+    description: created for wwt bigpanda eda demo

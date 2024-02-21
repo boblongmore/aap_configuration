@@ -2,5 +2,5 @@
 controller_organizations:
   - name: Default
     description: This is the Default Group
-  - name: bigpanda-eda
+  - name: Application-Demo
     description: organization for bigpanda-eda demo

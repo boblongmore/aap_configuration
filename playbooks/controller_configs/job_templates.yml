@@ -39,3 +39,10 @@ controller_templates:
     playbook: playbooks/linux_config.yml
     credentials:
       - linux-server-creds
+
+  - name: Restart Demo App
+    job_type: run
+    inventory: wwt-bigpanda-eda-demo-inventory
+    execution_environment: k8s-ee
+    project: wwt-bigpanda-eda-demo
+    playbook: restart_app_k8s.yml

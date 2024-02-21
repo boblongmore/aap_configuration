@@ -16,7 +16,7 @@ controller_projects:
 
   - name: wwt-bigpanda-eda-demo
     description: project used for bigpanda and eda demo
-    organization: bigpanda-eda
+    organization: Application-Demo
     scm_branch: main
     scm_clean: 'yes'
     scm_delete_on_update: 'no'
