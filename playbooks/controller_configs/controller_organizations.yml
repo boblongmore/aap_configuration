@@ -1,0 +1,6 @@
+---
+controller_organizations:
+  - name: Default
+    description: This is the Default Group
+  - name: bigpanda-eda
+    description: organization for bigpanda-eda demo
