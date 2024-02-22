@@ -6,8 +6,8 @@
   tasks:
     - name: Create Token
       awx.awx.token:
-        scope: "write"
-        state: "present"
+        scope: write
+        state: present
         controller_host: 10.236.72.94
         validate_certs: false
         controller_username: "{{ controller_username }}"
