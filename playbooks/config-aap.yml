@@ -25,3 +25,4 @@
     - { role: infra.controller_configuration.credentials, when: controller_credentials is defined and controller_oauthtoken is defined }
     - { role: infra.controller_configuration.inventory_sources, when: controller_inventory_sources is defined and controller_oauthtoken is defined }
     - { role: infra.controller_configuration.job_templates, when: controller_templates is defined and controller_oauthtoken is defined }
+    - { role: infra.controller_configuration.hosts, when: controller_hosts is defined and controller_oauthtoken is defined}
