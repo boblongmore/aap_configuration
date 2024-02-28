@@ -46,3 +46,4 @@ controller_templates:
     execution_environment: k8s-ee
     project: wwt-bigpanda-eda-demo
     playbook: restart_app_k8s.yml
+    ask_variables_on_launch: true
