@@ -1,3 +1,4 @@
+---
 controller_inventory_sources:
   - name: arista-config-inv-source
     source: scm

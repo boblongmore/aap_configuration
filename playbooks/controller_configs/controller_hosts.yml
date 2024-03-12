@@ -3,12 +3,12 @@ controller_hosts:
   - name: openshift_atc
     inventory: wwt-bigpanda-eda-demo-inventory
     variables:
-      k8s_username: '{{ k8s_username }}'
-      k8s_password: '{{ k8s_password }}'
-      cluster_url: '{{ cluster_url }}'
-      bigpanda_api_key: '{{ bigpanda_api_key }}'
-      deployment_name: '{{ deployment_name }}'
-      k8s_namespace: '{{ k8s_namespace }}'
+      k8s_username: "{{ k8s_username }}"
+      k8s_password: "{{ k8s_password }}"
+      cluster_url: "{{ cluster_url }}"
+      bigpanda_api_key: "{{ bigpanda_api_key }}"
+      deployment_name: "{{ deployment_name }}"
+      k8s_namespace: "{{ k8s_namespace }}"
       some_var: some_val
       ansible_connection: local
       enabled: true
