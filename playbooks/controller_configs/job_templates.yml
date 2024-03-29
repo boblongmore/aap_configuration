@@ -47,3 +47,14 @@ controller_templates:
     project: wwt-bigpanda-eda-demo
     playbook: restart_app_k8s.yml
     ask_variables_on_launch: true
+
+  - name: Arista-upgrade-tests
+    job_type: run
+    inventory: arista-config-inv-from-netbox
+    execution_environment: arista_netbox_v1
+    project: arista-network-tests
+    playbook: playbooks/arista_tests.yml
+    credentials:
+      - Arista-veos-credential
+    extra_vars:
+      ansible_become: true

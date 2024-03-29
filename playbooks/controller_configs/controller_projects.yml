@@ -27,3 +27,17 @@ controller_projects:
     scm_credential: ansiblefest_2024_github
     allow_override: true
     default_environment: k8s-ee
+
+  - name: arista-network-tests
+    description: tests for use in ansiblefest2024 presentation
+    organization: Default
+    scm_branch: main
+    scm_clean: yes
+    scm_delete_on_update: no
+    scm_type: git
+    scm_update_on_launch: yes
+    scm_update_cache_timeout: 0
+    scm_url: https://github.com/boblongmore/arista_network_tests
+    scm_credential: ansiblefest_2024_github
+    allow_override: true
+    default_environment: arista_netbox_v1
