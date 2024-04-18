@@ -58,3 +58,21 @@ controller_templates:
       - Arista-veos-credential
     extra_vars:
       ansible_become: true
+
+  - name: Arista-http-tests
+    job_type: run
+    inventory: arista-config-inv-from-netbox
+    execution_environment: arista_netbox_v1
+    project: arista-network-tests
+    playbook: playbooks/http_test.yml
+    credentials:
+      - linux-server-creds
+    extra_vars:
+      ANSIBLE_HOST_KEY_CHECKING: false
+
+  - name: Send message to Kafka
+    job_type: run
+    inventory: arista-config-inv-from-netbox
+    execution_environment: arista_netbox_v2
+    project: ansiblefest2024
+    playbook: playbooks/pb_kafka_prod.yml

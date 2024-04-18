@@ -4,10 +4,10 @@ controller_projects:
     description: Base Configs for Arista devices used for Ansiblefest 2024
     organization: Default
     scm_branch: main
-    scm_clean: yes
-    scm_delete_on_update: no
+    scm_clean: true
+    scm_delete_on_update: false
     scm_type: git
-    scm_update_on_launch: yes
+    scm_update_on_launch: true
     scm_update_cache_timeout: 0
     scm_url: https://github.com/boblongmore/arista_configuration
     scm_credential: ansiblefest_2024_github
@@ -18,10 +18,10 @@ controller_projects:
     description: project used for bigpanda and eda demo
     organization: Application-Demo
     scm_branch: main
-    scm_clean: yes
-    scm_delete_on_update: no
+    scm_clean: true
+    scm_delete_on_update: false
     scm_type: git
-    scm_update_on_launch: yes
+    scm_update_on_launch: true
     scm_update_cache_timeout: 0
     scm_url: https://github.com/nsthompson/deploy-wwt-demo-app
     scm_credential: ansiblefest_2024_github
@@ -32,12 +32,26 @@ controller_projects:
     description: tests for use in ansiblefest2024 presentation
     organization: Default
     scm_branch: main
-    scm_clean: yes
-    scm_delete_on_update: no
+    scm_clean: true
+    scm_delete_on_update: false
     scm_type: git
-    scm_update_on_launch: yes
+    scm_update_on_launch: true
     scm_update_cache_timeout: 0
     scm_url: https://github.com/boblongmore/arista_network_tests
+    scm_credential: ansiblefest_2024_github
+    allow_override: true
+    default_environment: arista_netbox_v1
+
+  - name: ansiblefest2024
+    description: Main project for ansiblefest2024 presentation
+    organization: Default
+    scm_branch: main
+    scm_clean: true
+    scm_delete_on_update: false
+    scm_type: git
+    scm_update_on_launch: true
+    scm_update_cache_timeout: 0
+    scm_url: https://github.com/boblongmore/ansiblefest2024
     scm_credential: ansiblefest_2024_github
     allow_override: true
     default_environment: arista_netbox_v1
