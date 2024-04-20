@@ -11,3 +11,7 @@ controller_execution_environments:
   - name: arista_netbox_v3
     image: 192.168.2.28/arista_netbox_v3
     credential: automationhub
+
+  - name: arista_netbox_v4
+    image: 192.168.2.28/arista_netbox_v4
+    credential: automationhub
