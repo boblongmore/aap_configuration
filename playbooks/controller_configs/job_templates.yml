@@ -68,6 +68,7 @@ controller_templates:
     credentials:
       - linux-server-creds
       - Arista-netbox-vault
+    ask_variables_on_launch: true
     extra_vars:
       ANSIBLE_HOST_KEY_CHECKING: false
 
@@ -87,6 +88,7 @@ controller_templates:
     credentials:
       - Arista-netbox-vault
       - Arista-veos-credential
+    ask_variables_on_launch: true
     extra_vars:
       ansible_become: true
 
@@ -99,6 +101,7 @@ controller_templates:
     credentials:
       - Arista-netbox-vault
       - Arista-veos-credential
+    ask_variables_on_launch: true
     extra_vars:
       ansible_become: true
 
@@ -110,3 +113,33 @@ controller_templates:
     playbook: playbooks/arista_initiate_swim.yml
     credentials:
       - Arista-netbox-vault
+      - Arista-veos-credential
+    ask_variables_on_launch: true
+    extra_vars:
+      ansible_become: true
+
+  - name: arista-update-netbox-sw
+    job_type: run
+    inventory: arista-config-inv-from-netbox
+    execution_environment: arista_netbox_v4
+    project: ansiblefest2024
+    playbook: playbooks/update_nb.yml
+    credentials:
+      - Arista-netbox-vault
+      - Arista-veos-credential
+    ask_variables_on_launch: true
+    extra_vars:
+      ansible_become: true
+
+  - name: Arista-upgrade-device
+    job_type: run
+    inventory: arista-config-inv-from-netbox
+    execution_environment: arista_netbox_v4
+    project: ansiblefest2024
+    playbook: playbooks/upgrade_arista_device.yml
+    credentials:
+      - Arista-netbox-vault
+      - Arista-veos-credential
+    ask_variables_on_launch: true
+    extra_vars:
+      ansible_become: true

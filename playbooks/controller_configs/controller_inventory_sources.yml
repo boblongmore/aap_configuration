@@ -11,6 +11,7 @@ controller_inventory_sources:
     overwrite: true
     update_on_launch: true
     update_cache_timeout: 0
+
   - name: linux-config-inv-source
     source: scm
     source_project: arista-veos-configuration
