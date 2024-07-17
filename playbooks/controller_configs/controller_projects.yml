@@ -54,4 +54,4 @@ controller_projects:
     scm_url: https://github.com/boblongmore/ansiblefest2024
     scm_credential: ansiblefest_2024_github
     allow_override: true
-    default_environment: arista_netbox_v4
+    default_environment: arista_netbox_v5

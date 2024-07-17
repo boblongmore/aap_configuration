@@ -8,6 +8,7 @@ controller_templates:
     playbook: playbooks/arista_base_settings.yml
     credentials:
       - Arista-veos-credential
+      - Arista-netbox-vault
     extra_vars:
       ansible_become: true
   - name: Arista-intf-settings
@@ -18,6 +19,7 @@ controller_templates:
     playbook: playbooks/arista_intf_config.yml
     credentials:
       - Arista-veos-credential
+      - Arista-netbox-vault
     extra_vars:
       ansible_become: true
   - name: Arista-bgp-settings
@@ -39,6 +41,7 @@ controller_templates:
     playbook: playbooks/linux_config.yml
     credentials:
       - linux-server-creds
+      - Arista-netbox-vault
 
   - name: Restart Demo App
     job_type: run
@@ -51,18 +54,19 @@ controller_templates:
   - name: Arista-upgrade-tests
     job_type: run
     inventory: arista-config-inv-from-netbox
-    execution_environment: arista_netbox_v4
+    execution_environment: arista_netbox_v5
     project: arista-network-tests
     playbook: playbooks/arista_tests.yml
     credentials:
       - Arista-veos-credential
+      - Arista-netbox-vault
     extra_vars:
       ansible_become: true
 
   - name: Arista-http-tests
     job_type: run
     inventory: arista-config-inv-from-netbox
-    execution_environment: arista_netbox_v4
+    execution_environment: arista_netbox_v5
     project: arista-network-tests
     playbook: playbooks/http_test.yml
     credentials:
@@ -75,14 +79,14 @@ controller_templates:
   - name: Send message to Kafka
     job_type: run
     inventory: arista-config-inv-from-netbox
-    execution_environment: arista_netbox_v4
+    execution_environment: arista_netbox_v5
     project: ansiblefest2024
     playbook: playbooks/pb_kafka_prod.yml
 
   - name: Arista-test-interfaces
     job_type: run
     inventory: arista-config-inv-from-netbox
-    execution_environment: arista_netbox_v4
+    execution_environment: arista_netbox_v5
     project: arista-network-tests
     playbook: playbooks/arista_test_interfaces.yml
     credentials:
@@ -95,7 +99,7 @@ controller_templates:
   - name: Arista-test-routing
     job_type: run
     inventory: arista-config-inv-from-netbox
-    execution_environment: arista_netbox_v4
+    execution_environment: arista_netbox_v5
     project: arista-network-tests
     playbook: playbooks/arista_test_routing.yml
     credentials:
@@ -108,9 +112,9 @@ controller_templates:
   - name: arista-initiate-swim
     job_type: run
     inventory: arista-config-inv-from-netbox
-    execution_environment: arista_netbox_v4
+    execution_environment: arista_netbox_v5
     project: ansiblefest2024
-    playbook: playbooks/arista_initiate_swim.yml
+    playbook: playbooks/pb_arista_initiate_swim.yml
     credentials:
       - Arista-netbox-vault
       - Arista-veos-credential
@@ -121,7 +125,7 @@ controller_templates:
   - name: arista-update-netbox-sw
     job_type: run
     inventory: arista-config-inv-from-netbox
-    execution_environment: arista_netbox_v4
+    execution_environment: arista_netbox_v5
     project: ansiblefest2024
     playbook: playbooks/pb_update_nb_sw.yml
     credentials:
@@ -134,9 +138,9 @@ controller_templates:
   - name: Arista-upgrade-device
     job_type: run
     inventory: arista-config-inv-from-netbox
-    execution_environment: arista_netbox_v4
+    execution_environment: arista_netbox_v5
     project: ansiblefest2024
-    playbook: playbooks/upgrade_arista_device.yml
+    playbook: playbooks/pb_upgrade_arista_device.yml
     credentials:
       - Arista-netbox-vault
       - Arista-veos-credential
@@ -147,7 +151,7 @@ controller_templates:
   - name: Arista-test-sw-version
     job_type: run
     inventory: arista-config-inv-from-netbox
-    execution_environment: arista_netbox_v4
+    execution_environment: arista_netbox_v5
     project: arista-network-tests
     playbook: playbooks/arista_test_sw_version.yml
     credentials:
@@ -160,7 +164,7 @@ controller_templates:
   - name: Arista-swim-cleanup
     job_type: run
     inventory: arista-config-inv-from-netbox
-    execution_environment: arista_netbox_v4
+    execution_environment: arista_netbox_v5
     project: ansiblefest2024
     playbook: playbooks/pb_swim_cleanup.yml
     credentials:
@@ -173,7 +177,7 @@ controller_templates:
   - name: Arista-post-upgrade
     job_type: run
     inventory: arista-config-inv-from-netbox
-    execution_environment: arista_netbox_v4
+    execution_environment: arista_netbox_v5
     project: ansiblefest2024
     playbook: playbooks/pb_post_upgrade.yml
     credentials:
@@ -182,3 +186,17 @@ controller_templates:
     ask_variables_on_launch: true
     extra_vars:
       ansible_become: true
+
+  - name: Arista-reset-demo-environment
+    job_type: run
+    inventory: arista-config-inv-from-netbox
+    execution_environment: arista_netbox_v5
+    project: ansiblefest2024
+    playbook: playbooks/pb_reset_demo.yml
+    credentials:
+      - Arista-netbox-vault
+      - Arista-veos-credential
+    ask_variables_on_launch: true
+    extra_vars:
+      ansible_become: true
+    scm_branch: reset-demo-env
