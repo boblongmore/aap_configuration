@@ -49,7 +49,7 @@ controller_projects:
     scm_clean: true
     scm_delete_on_update: false
     scm_type: git
-    scm_update_on_launch: true
+    scm_update_on_launch: false
     scm_update_cache_timeout: 0
     scm_url: https://github.com/boblongmore/ansiblefest2024
     scm_credential: ansiblefest_2024_github
